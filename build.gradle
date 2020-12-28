@@ -8,11 +8,57 @@ buildscript {
     dependencies {
         classpath "com.android.tools.build:gradle:4.0.1"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "gradle.plugin.com.dorongold.plugins:task-tree:1.5"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
 }
+
+plugins {
+    id('io.gitlab.arturbosch.detekt').version('1.15.0')
+}
+
+//// 여기에서 모든 모듈의 스타일을 한꺼번에 검사하려면 이 코드를 사용
+detekt {
+    parallel = true
+    toolVersion = '1.15.0'
+    input = files('base/src/main/java', 'app/src/main/java')    // 검사할 소스 디렉터리 목록
+    config = files('kotlin-style.yml')
+    buildUponDefaultConfig = false
+}
+
+tasks.withType(io.gitlab.arturbosch.detekt.Detekt) {
+    exclude("**/resources/**")
+    exclude("**/build/**")
+
+    reports {
+        xml.enabled = true
+        html.enabled = true
+    }
+}
+
+//// 각 모듈에서 스타일을 각각 검사하려면 이 코드를 사용 (속도가 느려진다고 하므로 사용하지 않음)
+//subprojects {
+//    apply plugin: 'io.gitlab.arturbosch.detekt'
+//
+//    detekt {
+//        toolVersion = '1.15.0'
+//        parallel = true
+//        config = files('../kotlin-style.yml')
+//        buildUponDefaultConfig = false
+//    }
+//
+//    tasks.withType(io.gitlab.arturbosch.detekt.Detekt) {
+//        exclude("**/resources/**")
+//        exclude("**/build/**")
+//
+//        reports {
+//            xml.enabled = true
+//            html.enabled = true
+//        }
+//    }
+//}
 
 allprojects {
     repositories {
@@ -24,3 +70,5 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+apply plugin: "com.dorongold.task-tree"

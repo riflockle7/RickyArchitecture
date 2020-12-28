@@ -6,5 +6,4 @@ package kr.co.ricky.base
  * @author ricky
  * @since v1.0.0 / 2020.12.28
  */
-class BaseActivity {
-}
+class BaseActivity
