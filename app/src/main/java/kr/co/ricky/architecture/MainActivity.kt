@@ -1,11 +1,23 @@
 package kr.co.ricky.architecture
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import kr.co.ricky.architecture.databinding.ActivityMainBinding
+import kr.co.ricky.base.BaseActivity
+import kr.co.ricky.base.navigate
 
-class MainActivity : AppCompatActivity() {
+/**
+ * MainActivity
+ *
+ * @author ricky
+ * @since v1.0.0 / 2020.12.29
+ */
+class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding.apply {
+            //Do something
+            tvTitle.text = "액티비티 테스트"
+            MainFragment().navigate(supportFragmentManager, flFragment.id)
+        }
     }
 }

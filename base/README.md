@@ -19,3 +19,4 @@
 
 3. dataBinding
 - [안드로이드 Data Binding(데이터 바인딩) 반복되는 코드 줄이기](https://seunghyun.in/android/1/)
+- [Base 관련 정리](https://youngest-programming.tistory.com/285)
