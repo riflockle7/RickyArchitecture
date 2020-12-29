@@ -28,3 +28,7 @@
 - [MVVM & 안드로이드 아키텍쳐 컴포넌트 시작하기](https://blog.yena.io/studynote/2019/03/16/Android-MVVM-AAC-1.html)
 - [AAC를 사용하여 MVVM Architecture를 적용한 안드로이드 앱 만들기](https://medium.com/hongbeomi-dev/aac%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC-mvvm-pattern%EC%9D%84-%EA%B5%AC%ED%98%84%ED%95%9C-%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%95%B1-%EB%A7%8C%EB%93%A4%EA%B8%B0-1d6d73689bd0)
 - [Android Architecture Components를 활용하여 MVVM 적용하기](https://blog.gangnamunni.com/post/aac_mvvm/)
+
+5. LiveData
+- [LiveData...넌 누구냐?](https://velog.io/@jojo_devstory/Android-LiveData...%EB%84%8C-%EB%88%84%EA%B5%AC%EB%83%90)
+- [LiveData vs ObservableField 무엇을 써야 할까?](https://seunghyun.in/android/5/)

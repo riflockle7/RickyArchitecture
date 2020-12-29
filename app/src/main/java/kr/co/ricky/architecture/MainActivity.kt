@@ -1,6 +1,8 @@
 package kr.co.ricky.architecture
 
 import android.os.Bundle
+import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import kr.co.ricky.architecture.databinding.ActivityMainBinding
 import kr.co.ricky.base.BaseActivity
@@ -23,7 +25,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
         binding.apply {
             //Do something
-            viewModel.title.set("액티비티 테스트")
+            tvTitle.setOnClickListener { viewModel.setTitle("${viewModel.title.value}1") }
             MainFragment().navigate(supportFragmentManager, flFragment.id)
         }
     }

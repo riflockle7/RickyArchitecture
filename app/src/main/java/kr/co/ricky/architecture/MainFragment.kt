@@ -20,7 +20,7 @@ class MainFragment : BaseFragment<FragmentMainBinding>(R.layout.fragment_main) {
 
         binding.apply {
             //Do something
-            viewModel.title.set("프레그먼트 테스트")
+            viewModel.setTitle("프레그먼트 테스트")
         }
     }
 }
