@@ -10,24 +10,36 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import androidx.lifecycle.ViewModelProvider
 
 /**
  * BaseFragment
+ *
+ * @param layoutResId 레이아웃 Resource Id
+ *
+ * @property binding 바인딩 객체
+ * @property viewModel ViewModel. 사용하지 않을 경우 null
  *
  * @author ricky
  * @since v1.0.0 / 2020.12.29
  */
 abstract class BaseFragment<B : ViewDataBinding>(
-    @LayoutRes val layoutId: Int
+    @LayoutRes val layoutResId: Int
 ) : Fragment() {
     lateinit var binding: B
+    protected abstract val viewModel: BaseViewModel?
+
+    val viewModelFactory: ViewModelProvider.AndroidViewModelFactory by lazy {
+        // TODO 이게 맞는 방식인가?
+        ViewModelProvider.AndroidViewModelFactory.getInstance(requireActivity().application)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, layoutId, container, false)
+        binding = DataBindingUtil.inflate(inflater, layoutResId, container, false)
         return binding.root
     }
 

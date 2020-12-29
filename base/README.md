@@ -20,3 +20,11 @@
 3. dataBinding
 - [안드로이드 Data Binding(데이터 바인딩) 반복되는 코드 줄이기](https://seunghyun.in/android/1/)
 - [Base 관련 정리](https://youngest-programming.tistory.com/285)
+
+4. MVVM
+- [ViewModelProviders.of deprecated](https://selfish-developer.com/entry/ViewModelProvidersof-deprecated)
+- [AAC ViewModel 설정 및 VIewModelProviders.of() Deprecated](https://themach.tistory.com/42)
+- [AAC ViewModel 을 생성하는 6가지 방법 - ViewModelProvider](https://readystory.tistory.com/176)
+- [MVVM & 안드로이드 아키텍쳐 컴포넌트 시작하기](https://blog.yena.io/studynote/2019/03/16/Android-MVVM-AAC-1.html)
+- [AAC를 사용하여 MVVM Architecture를 적용한 안드로이드 앱 만들기](https://medium.com/hongbeomi-dev/aac%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EC%97%AC-mvvm-pattern%EC%9D%84-%EA%B5%AC%ED%98%84%ED%95%9C-%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%EC%95%B1-%EB%A7%8C%EB%93%A4%EA%B8%B0-1d6d73689bd0)
+- [Android Architecture Components를 활용하여 MVVM 적용하기](https://blog.gangnamunni.com/post/aac_mvvm/)

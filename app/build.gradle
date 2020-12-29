@@ -31,6 +31,19 @@ android {
     }
 }
 
+// Rejecting re-init on previously-failed class 에러로 인해 추가
+// https://wonpaper.tistory.com/205
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == "androidx.appcompat") {
+            if (!requested.name.startsWith("multidex")) {
+                details.useVersion "1.+"
+            }
+        }
+    }
+}
+
 repositories {
     jcenter()
 }
